@@ -39,6 +39,21 @@ Example Usage
 }
 ```
 
+UPDATE BY heart
+
+```objc
+[Tween addTween:self tweenId:0 .........
+
+//Stop Tween By tweenId
+[Tween stopTweenId:0];
+
+
+
+TweenObject *tw_obj = [Tween addTween:self tweenId:1 .........
+
+//Stop Tween by TweenObject
+[Tween stopTweenObject:tw_obj];
+```
 
 Licensed
 =============
