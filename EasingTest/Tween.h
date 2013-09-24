@@ -10,6 +10,43 @@
 #import <QuartzCore/QuartzCore.h>
 #import "TweenObject.h"
 
+#define TWEEN_EASE_NONE @"easeNone"
+#define TWEEN_EASE_QUAD_IN @"easeInQuad"
+#define TWEEN_EASE_QUAD_OUT @"easeOutQuad"
+#define TWEEN_EASE_QUAD_INOUT @"easeInOutQuad"
+#define TWEEN_EASE_CUBIC_IN @"easeInCubic"
+#define TWEEN_EASE_CUBIC_OUT @"easeOutCubic"
+#define TWEEN_EASE_CUBIC_IN_OUT @"easeInOutCubic"
+#define TWEEN_EASE_QUART_IN @"easeInQuart"
+#define TWEEN_EASE_QUART_OUT @"easeOutQuart"
+#define TWEEN_EASE_QUART_INOUT @"easeInOutQuart"
+#define TWEEN_EASE_QUINT_IN @"easeInQuint"
+#define TWEEN_EASE_QUINT_OUT @"easeOutQuint"
+#define TWEEN_EASE_QUINT_IN_OUT @"easeInOutQuint"
+#define TWEEN_EASE_SINE_IN @"easeInSine"
+#define TWEEN_EASE_SINE_OUT @"easeOutSine"
+#define TWEEN_EASE_SINE_INOUT @"easeInOutSine"
+#define TWEEN_EASE_EXPO_IN @"easeInExpo"
+#define TWEEN_EASE_EXPO_OUT @"easeOutExpo"
+#define TWEEN_EASE_EXPO_INOUT @"easeInOutExpo"
+#define TWEEN_EASE_CIRC_IN @"easeInCirc"
+#define TWEEN_EASE_CIRC_OUT @"easeOutCirc"
+#define TWEEN_EASE_CIRC_INOUT @"easeInOutCirc"
+#define TWEEN_EASE_ELASTIC_IN @"easeInElastic"
+#define TWEEN_EASE_ELASTIC_OUT @"easeOutElastic"
+#define TWEEN_EASE_ELASTIC_INOUT @"easeInOutElastic"
+#define TWEEN_EASE_BACK_IN @"easeInBack"
+#define TWEEN_EASE_BACK_OUT @"easeOutBack"
+#define TWEEN_EASE_BACK_INOUT @"easeInOutBack"
+#define TWEEN_EASE_BOUNCE_IN @"easeInBounce"
+#define TWEEN_EASE_BOUNCE_OUT @"easeOutBounce"
+#define TWEEN_EASE_BOUNCE_INOUT @"easeInOutBounce"
+
+    
+    
+    
+    
+
 @interface Tween : NSObject
 
 // add
@@ -49,5 +86,8 @@
 + (double)easeInBounce:(double)t b:(double)b c:(double)c d:(double)d;
 + (double)easeOutBounce:(double)t b:(double)b c:(double)c d:(double)d;
 + (double)easeInOutBounce:(double)t b:(double)b c:(double)c d:(double)d;
+
++(void)stopTweenId:(int)tweenId;
++(void)stopTweenObject:(TweenObject*)tweenObject;
 
 @end
