@@ -16,9 +16,9 @@ static NSMutableArray *tweens_ = nil;
 #pragma mark - --------------------------------------------------------------------------
 #pragma mark - public
 
-+ (void)addTween:(id)parent tweenId:(int)tweenId startValue:(double)startValue endValue:(double)endValue time:(double)time delay:(double)delay easing:(int)easing startSEL:(SEL)startSEL updateSEL:(SEL)updateSEL endSEL:(SEL)endSEL
++ (TweenObject*)addTween:(id)parent tweenId:(int)tweenId startValue:(double)startValue endValue:(double)endValue time:(double)time delay:(double)delay easing:(int)easing startSEL:(SEL)startSEL updateSEL:(SEL)updateSEL endSEL:(SEL)endSEL
 {
-    [Tween addTween:parent
+    return [Tween addTween:parent
             tweenId:tweenId
          startValue:startValue
            endValue:endValue
@@ -31,7 +31,7 @@ static NSMutableArray *tweens_ = nil;
              endSEL:endSEL];
 }
 
-+ (void)addTween:(id)parent tweenId:(int)tweenId startValue:(double)startValue endValue:(double)endValue time:(double)time delay:(double)delay easing:(int)easing param:(NSMutableDictionary *)param startSEL:(SEL)startSEL updateSEL:(SEL)updateSEL endSEL:(SEL)endSEL
++ (TweenObject*)addTween:(id)parent tweenId:(int)tweenId startValue:(double)startValue endValue:(double)endValue time:(double)time delay:(double)delay easing:(int)easing param:(NSMutableDictionary *)param startSEL:(SEL)startSEL updateSEL:(SEL)updateSEL endSEL:(SEL)endSEL
 {
     if (timer_ == nil) {
         timer_ = [NSTimer scheduledTimerWithTimeInterval:1.0 / 60.0
@@ -79,6 +79,8 @@ static NSMutableArray *tweens_ = nil;
     tween.startTime = currentTime;
     tween.ended = NO;
     [tweens_ addObject:tween];
+    
+    return tween;
 }
 
 +(void)stopTweenId:(int)tweenId{
