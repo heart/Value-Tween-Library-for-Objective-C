@@ -18,7 +18,7 @@
 @property (nonatomic, assign) double endValue;
 @property (nonatomic, assign) double time;
 @property (nonatomic, assign) double delay;
-@property (nonatomic, retain) NSString *easing;
+@property (nonatomic, assign) int easing;
 @property (nonatomic, retain) id selStart;
 @property (nonatomic, retain) id selUpdate;
 @property (nonatomic, retain) id selEnd;
